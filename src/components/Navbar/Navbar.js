@@ -2,6 +2,7 @@ import { Nav } from 'react-bootstrap';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Button from '../Button/Button'
+import CartWidget from '../CartWidget/CartWidget';
 
 
 
@@ -16,7 +17,8 @@ const Navegador = () => {
                 <Button variant='secondary' marginLeft='auto' label='CATEGORIA 2'/>
                 <Button variant='success' marginLeft='auto' label='CATEGORIA 3'/>
             </Nav>
-            <Button variant='outline-secondary' marginLeft='auto' label='CARRITO'/>
+          
+            <CartWidget  marginLeft='auto' width='5%' />
             </Container>
         </Navbar>
       </nav>
