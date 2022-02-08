@@ -1,9 +1,9 @@
 import Button from 'react-bootstrap/Button'
 
-const Btn = ({ paddingRight, marginLeft, variant, label}) => {
+const Btn = ({ paddingRight, marginLeft, variant, label, onClick}) => {
 
 return (
-    <Button style={{variant, marginLeft, paddingRight}}>{label}</Button>
+    <Button onClick={onClick} style={{variant, marginLeft, paddingRight}}>{label}</Button>
 )
 }
 

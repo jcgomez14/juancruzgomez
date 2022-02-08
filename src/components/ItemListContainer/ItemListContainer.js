@@ -1,6 +1,7 @@
 //import salad from '../assets/img/1salad.png' ;
 //import china from '../assets/img/1china.png' ;
 //import deMarco from '../assets/img/1mac.png' ;
+import FuctionCounter from "../ItemCount/ItemCount"
 
 
 const articulos = [
@@ -19,6 +20,7 @@ function ItemListContainer  (){
                 <div>
                     <h3>{e.producto}</h3>
                     <img src={e.img}></img>
+                    <FuctionCounter />
                 </div>
             )
         })
