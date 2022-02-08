@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Navegador />
-      <ItemListContainer greeting ="Hola Mundo!" />
+      <ItemListContainer />
     </div>
   );
 }
