@@ -13,14 +13,14 @@ const articulos = [
 ]
 
 
-function ItemListContainer  (){
+function ItemListContainer (){
     return(
         articulos.map(e =>{
             return(
                 <div>
                     <h3>{e.producto}</h3>
                     <img src={e.img}></img>
-                    <FuctionCounter />
+                    <FuctionCounter stock='5' initial='1' />
                 </div>
             )
         })
