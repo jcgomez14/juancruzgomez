@@ -1,39 +1,50 @@
 //import salad from '../assets/img/1salad.png' ;
 //import china from '../assets/img/1china.png' ;
 //import deMarco from '../assets/img/1mac.png' ;
-import FuctionCounter from "../ItemCount/ItemCount"
+import { useEffect,useState } from "react";
+import ItemList from "../ItemList/ItemList"
+
 
 
 
 const articulos = [
-    {producto: 'Remera Salad' , img: "./assets/img/1salad.png" , alt: 'Remera Salad'},
-    {producto: 'Remera China' , img: "./assets/img/1china.png" , alt: 'Remera China' },
-    {producto: 'Remera Mac DeMarco' , img: "./assets/img/1mac.png" , alt: 'Remera MacDeMarco'},
+    {id:1 , producto: 'Remera Salad' , precio: '1800' , img: "./assets/img/1salad.png" , alt: 'Remera Salad' , stock: 10},
+    {id:2 , producto: 'Remera China' , precio: '2000' , img: "./assets/img/1china.png" , alt: 'Remera China' , stock: 10},
+    {id:3 ,producto: 'Remera Mac DeMarco' , precio: '2200' , img: "./assets/img/1mac.png" , alt: 'Remera MacDeMarco', stock: 10},
 ]
+
+
+const getArticulos =() =>{
+    return new Promise((resolve,reject)=>{
+    
+        setTimeout(()=>{
+            resolve(articulos)
+    
+        },2000)
+    
+        })
+    
+    }
 
 
 function ItemListContainer (){
 
-    const onAdd = (count) => {
-        if(count > 0){
-        alert(`Agregaste ${count} productos al carrito`)
-        }
-        else{
-            alert(`No se puede agregar 0 productos al carrito`)
-
-        }
-    }
+    const[articulos,setArticulos]=useState([])
+    useEffect(()=>{
+        getArticulos().then((articulos)=>{
+        
+            setArticulos(articulos)
+        
+        })
+        
+        
+        },[])
 
     return(
-        articulos.map(e =>{
-            return(
-                <div>
-                    <h3>{e.producto}</h3>
-                    <img src={e.img} alt={e.alt}></img>
-                    <FuctionCounter stock='5' initial='1' onAdd={onAdd} />
-                </div>
-            )
-        })
+        <div>
+            <ItemList articulos={articulos}/>
+        </div>     
+       
     )
 }
     export default ItemListContainer
